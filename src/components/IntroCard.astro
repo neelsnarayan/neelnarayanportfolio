@@ -11,12 +11,29 @@ import { Image } from "astro:assets";
   <div class="flex w-full h-full">
     <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
       <div class="flex flex-col h-full">
-        <h6 class="text-sm font-light m-0 text-gray-500">welcome</h6>
+        <h6 class="text-sm font-light m-0 text-gray-500">Welcome</h6>
         <p class="m-0 font-light text-xl">
-          Hi, I'm <b class="font-bold">Gianmarco Cavallo</b>, a software
-          developer with strong focus on the user experience, animations and
-          micro interactions
+          Hi, I'm <b class="font-bold">Neel Narayan</b> and I like to build. Welcome to my (mini) portfolio.
         </p>
+        <div class="mt-4">
+          <h2 class="text-sm font-semibold text-primary-500 mb-2">Contact Me</h2>
+          <p class="text-sm font-light text-gray-500">
+            Reach out at <a href="mailto:neelsn@stanford.edu" class="text-primary-500 hover:underline">neelsn@stanford.edu</a>
+          </p>
+        </div>
+        <div class="mt-4">
+          <h2 class="text-sm font-semibold text-primary-500 mb-2">Education @ Stanford University</h2>
+          <div class="space-y-2 text-sm font-light">
+            <p>
+              <span class="text-gray-300">M.S. Computational & Mathematical Engineering</span><br/>
+              <span class="text-gray-500">Mathematical & Computational Finance Track</span>
+            </p>
+            <p>
+              <span class="text-gray-300">B.S. Computer Science</span><br/>
+              <span class="text-gray-500">Artificial Intelligence Track</span>
+            </p>
+          </div>
+        </div>
       </div>
       <div class="flex gap-4">
         <a href={LINKS.github} aria-label="github profile" target="_blank">
@@ -31,10 +48,10 @@ import { Image } from "astro:assets";
             <span class="sr-only">Linkedin Profile</span>
           </Button>
         </a>
-        <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
-          <Button aria-label="dribble profile">
-            <Icon name="ri:dribbble-fill" class="h-6" />
-            <span class="sr-only">Dribble Profile</span>
+        <a href={LINKS.scholar} aria-label="google scholar profile" target="_blank">
+          <Button aria-label="google scholar profile">
+            <Icon name="ri:graduation-cap-fill" class="h-6" />
+            <span class="sr-only">Google Scholar Profile</span>
           </Button>
         </a>
         <Tooltip client:visible>
@@ -45,12 +62,12 @@ import { Image } from "astro:assets";
         </Tooltip>
       </div>
     </div>
-    <Image
+    <!-- <Image
       width="300"
       height="300"
       src="/me.webp"
       class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
       alt="memoji of gianmarco"
-    />
+    /> -->
   </div>
 </Card>

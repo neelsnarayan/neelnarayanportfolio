@@ -9,13 +9,20 @@ const GlobeComponent = () => {
     "France",
     "China",
     "Italy",
-    "Sri Lanka",
-    "Turkey",
+    "USA",
+    "India",
     "Greece",
-    "Malta",
-    "Hungary",
-    "Portugal",
-    "Marocco",
+    "Mexico",
+    "Poland",
+    "Czech Republic",
+    "Australia",
+    "Austria",
+    "Canada",
+    "Germany",
+    "Thailand",
+    "Spain",
+    "Ireland",
+    "England"
   ];
 
   onMount(() => {

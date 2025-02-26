@@ -1,14 +1,14 @@
 export const LINKS = {
-  github: "https://github.com/Ladvace",
-  linkedin: "https://www.linkedin.com/in/gianmarco-cavallo/",
-  medium: "https://ladvace.medium.com/",
-  discord: "https://discordapp.com/users/163300027618295808",
-  dribble: "https://dribbble.com/Ladvace_Jace",
-  email: "contact@gianmarcocavallo.com<",
+  github: "https://github.com/neelsnarayan",
+  linkedin: "https://www.linkedin.com/in/neelsn/",
+  medium: "https://neelnarayan.com",
+  discord: "https://neelnarayan.com",
+  scholar: "https://scholar.google.com/citations?user=_bFd5TQAAAAJ&hl=en",
+  email: "neelsn@stanford.edu",
 };
 
 export const loaderAnimation = [
   ".loader",
-  { opacity: [1, 0], pointerEvents: "none" },
+  { opacity: [1, 0], pointerEvents: "none" }, 
   { easing: "ease-out" },
 ];

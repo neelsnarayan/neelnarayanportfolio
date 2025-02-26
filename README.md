@@ -1,4 +1,4 @@
-# ⚡️astro-bento-portfolio
+<!-- # ⚡️astro-bento-portfolio
 
 ## A personal portfolio website made using `Astro`.
 
@@ -72,4 +72,4 @@ or
 
 ## Authors ❤️
 
-- Gianmarco - https://github.com/Ladvace
+- Gianmarco - https://github.com/Ladvace -->
