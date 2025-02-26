@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel";
 import robotsTxt from "astro-robots-txt";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
@@ -21,18 +21,27 @@ export default defineConfig({
         "https://neelnarayan.com/sitemap-0.xml",
       ],
     }),
-    solidJs(),
+    solidJs({
+      include: ['**/solid/**/*.{jsx,tsx}', '**/TimeZoneCard.astro']
+    }),
     UnoCSS({ injectReset: true }),
     icon(),
     svelte(),
-    react(),
+    react({
+      include: ['**/react/**/*.{jsx,tsx}', '**/Analytics.{jsx,tsx}']
+    }),
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
   output: "static",
-  adapter: vercel(),
+  adapter: vercel({
+    analytics: true
+  }),
   vite: {
     assetsInclude: "**/*.riv",
+    ssr: {
+      noExternal: ['solid-js']
+    }
   },
 });
