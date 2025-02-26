@@ -4,7 +4,7 @@ import vercel from "@astrojs/vercel/static";
 import robotsTxt from "astro-robots-txt";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
-
+import react from "@astrojs/react";
 import solidJs from "@astrojs/solid-js";
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 
@@ -25,6 +25,7 @@ export default defineConfig({
     UnoCSS({ injectReset: true }),
     icon(),
     svelte(),
+    react(),
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
