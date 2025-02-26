@@ -22,7 +22,7 @@ export default defineConfig({
       ],
     }),
     solidJs({
-      include: ['**/solid/**/*.{jsx,tsx}', '**/TimeZoneCard.astro']
+      include: ['**/Tooltip/**/*.{jsx,tsx}']
     }),
     UnoCSS({ injectReset: true }),
     icon(),
@@ -39,7 +39,6 @@ export default defineConfig({
     analytics: true
   }),
   vite: {
-    assetsInclude: "**/*.riv",
     ssr: {
       noExternal: ['solid-js']
     }
