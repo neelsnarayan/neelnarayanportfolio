@@ -10,62 +10,26 @@ interface Props {
 }
 
 const { title, description, page, slug, pubDate } = Astro.props;
-const image =
-  page === "travel"
-    ? `${Astro.url.origin}/globe_preview.webp"`
-    : `${Astro.url.origin}/og-image.png`;
 
-const schema =
-  page !== "blog"
-    ? {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        name: "Gianmarco",
-        url: Astro.url.origin,
-        sameAs: [LINKS.linkedin, LINKS.github],
-        image: `${Astro.url.origin}/og-image.png`,
-        jobTitle: "Freelance Frontend Developer",
-        worksFor: {
-          "@type": "Organization",
-          name: "Self-Employed",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Italy",
-            addressCountry: "IT",
-          },
-        },
-        nationality: {
-          "@type": "Country",
-          name: "Italy",
-        },
-      }
-    : {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": `${Astro.url.origin}/blog/${slug}`,
-        },
-        headline: title || title,
-        description: description || title,
-        image: `${Astro.url.origin}/og-image.png`, //TODO: dynamic
-        author: {
-          "@type": "Person",
-          name: "Gianmarco",
-          url: Astro.url.origin,
-          sameAs: [LINKS.linkedin, LINKS.github],
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Gianmarco",
-          logo: {
-            "@type": "ImageObject",
-            url: `${Astro.url.origin}/og-image.png`,
-          },
-        },
-        datePublished: pubDate || new Date().toISOString(),
-        dateModified: pubDate || new Date().toISOString(),
-      };
+const schema = {
+  "@context": "http://schema.org",
+  "@type": "Person",
+  name: "Neel Narayan",
+  url: Astro.url.origin,
+  sameAs: [LINKS.linkedin, LINKS.github, LINKS.scholar],
+  // image: `${Astro.url.origin}/og-image.png`,
+  jobTitle: "Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Stanford University",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Stanford",
+      addressRegion: "CA",
+      addressCountry: "US",
+    },
+  },
+};
 ---
 
 <!doctype html>
@@ -83,18 +47,17 @@ const schema =
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.origin} />
-    <meta
-      property="og:image"
-      content={image || `${Astro.url.origin}/og-image.png`}
-    />
-    <!-- Basic Twitter Card tags -->
+    <!-- <meta property="og:image" content={`${Astro.url.origin}/og-image.png`} /> -->
+    <meta property="og:image:alt" content="Neel Narayan's Portfolio" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta
-      name="twitter:image"
-      content={image || `${Astro.url.origin}/og-image.png`}
-    />
+    <!-- <meta name="twitter:image" content={`${Astro.url.origin}/og-image.png`} /> -->
+    <meta name="twitter:image:alt" content="Neel Narayan's Portfolio" />
 
     <link rel="preconnect" href="https://cdn.fontshare.com" />
     {
