@@ -42,6 +42,14 @@ const schema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
+    
+    <!-- Apple/iMessage specific tags -->
+    <meta name="apple-mobile-web-app-title" content={title} />
+    <meta property="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" type="image/svg+xml" sizes="180x180" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
     <!-- Basic OG tags for sharing your website's content on platforms like Facebook and LinkedIn -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
