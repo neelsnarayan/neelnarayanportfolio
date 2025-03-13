@@ -215,6 +215,7 @@ import { getCurrentTimeInPST, formatTimeForPST } from "../lib/helpers";
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2"
       title="Neel Time"
+      id="timeCard"
     >
       <time
         datetime=""
@@ -223,10 +224,29 @@ import { getCurrentTimeInPST, formatTimeForPST } from "../lib/helpers";
       >
         Loading...
       </time>
+      <audio id="hoverSound" loop preload="auto">
+        <source src="/trimmedbron.mp4" type="audio/mp4">
+        Your browser does not support the audio element.
+      </audio>
     </Card>
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
         const timeDisplay = document.getElementById("timeDisplay");
+        const timeCard = document.getElementById("timeCard");
+        const hoverSound = document.getElementById("hoverSound");
+        
+        // Add hover event listeners for sound
+        if (timeCard && hoverSound) {
+          timeCard.addEventListener('mouseenter', () => {
+            hoverSound.play().catch(e => console.log("Audio play failed:", e));
+          });
+          
+          timeCard.addEventListener('mouseleave', () => {
+            hoverSound.pause();
+            hoverSound.currentTime = 0;
+          });
+        }
+        
         function updateClock() {
           const now = new Date();
           const options = {
