@@ -31,8 +31,8 @@
     "lenis": "^1.1.14",
     "mdast-util-to-string": "^4.0.0",
     "motion": "^10.18.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "reading-time": "^1.5.0",
     "solid-js": "^1.9.5",
     "svelte": "^5.15.0"
